@@ -1,0 +1,13 @@
+#compdef rmall
+
+_arguments -s -S \
+  '(- *)'{-h,--help}'[muestra la ayuda]' \
+  '(- *)'{-V,--version}'[muestra la versión]' \
+  '(-n --dry-run)'{-n,--dry-run}'[muestra qué se borraría sin tocar nada]' \
+  '(-t --trash --rm)'{-t,--trash}'[mueve a la papelera en vez de borrar]' \
+  '(-t --trash)--rm[borrado permanente aunque RMALL_USE_TRASH=1]' \
+  '*'{-e+,--exclude=}'[conserva lo que coincida con el patrón]:patrón glob:' \
+  '(-H --no-hidden)'{-H,--no-hidden}'[conserva los archivos ocultos]' \
+  '(-y --yes)'{-y,--yes}'[no pide confirmación]' \
+  '(-q --quiet)'{-q,--quiet}'[salida mínima]' \
+  '1:directorio:_directories'
